@@ -1,10 +1,13 @@
 import asyncio
 import twitchio
 from twitchio.ext import pubsub
+from Get_Twitch_Keys import *
 from ER_CE_Integration import *
 
-my_token = "[YOUR-TOKEN-HERE]"
-users_channel_id = 0 # Your channel ID here
+tokens = get_keys()
+
+my_token = tokens["Access"] # Access token here
+users_channel_id = int(tokens["ChannelID"]) # Your channel ID here
 client = twitchio.Client(token=my_token)
 client.pubsub = pubsub.PubSubPool(client)
 

@@ -1,7 +1,6 @@
 from pymem import *
 from pymem.process import *
 
-
 mem = Pymem("eldenring.exe")
 gameModule = module_from_name(mem.process_handle, "eldenring.exe").lpBaseOfDll
 
@@ -24,10 +23,13 @@ def SetHP(num_hp):
     if (not num_hp >= 0):
         return
        
-    mem.write_int(GetPtrAddr(gameModule + 0x045B4170, [0x4E8, 0x0, 0x10, 0x190, 0xC0, 0x370, 0x138]), num_hp)
+    mem.write_int(GetPtrAddr(gameModule + 0x03CD8F60, [0x8, 0x0, 0x420, 0x10, 0x478]), num_hp)
 
 def SetFP(num_fp):
     if (not num_fp >= 0):
         return
        
     mem.write_int(GetPtrAddr(gameModule + 0x03AD0898, [0x810, 0x190, 0x248, 0x8, 0x190, 0x0, 0x148]), num_fp)
+    
+#num = int(input("Write value: "))
+#SetFP(num)
