@@ -1,0 +1,6 @@
+{
+	"Access": "[YOUR ACCESS TOKEN HERE]",
+	"Refresh": "[YOUR REFRESH TOKEN HERE]",
+	"ClientID": "[YOUR CLIENT ID HERE]",
+	"ChannelID": "[YOUR CHANNEL ID HERE]"
+}
