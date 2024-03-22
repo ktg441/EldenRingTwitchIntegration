@@ -19,11 +19,15 @@ async def event_pubsub_channel_points(event: pubsub.PubSubChannelPointsMessage):
     print (event.reward.title)
     print (event.input)
     
-    if (event.reward.title == "Set Character HP" and event.input.isnumeric()):
-        SetHP(int(event.input))
+    try:
     
-    if (event.reward.title == "Set Character Runes" and event.input.isnumeric()):
-        SetRunes(int(event.input))
+        if (event.reward.title == "Set Character HP" and event.input.isnumeric()):
+            SetHP(int(event.input))
+        
+        if (event.reward.title == "Set Character Runes" and event.input.isnumeric()):
+            SetRunes(int(event.input))
+    except:
+        print ("Failed to change memory")
 
 async def main():
     topics = [
